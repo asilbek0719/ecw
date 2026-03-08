@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Oygulim uchun ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
+text-align:center;
+
+background: linear-gradient(270deg,#ff0066,#ff4da6,#cc0033,#ff1a75);
+background-size:800% 800%;
+animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.page{
+display:none;
+padding:40px;
+}
+
+.active{
+display:block;
+}
+
+button{
+background:linear-gradient(45deg,#ff0066,#ff4da6);
+border:3px solid #00bfff;
+padding:15px 30px;
+margin:10px;
+font-size:18px;
+color:white;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.big-heart{
+font-size:120px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+0%{transform:scale(1);}
+50%{transform:scale(1.4);}
+100%{transform:scale(1);}
+}
+
+.love-img{
+margin-top:40px;
+width:300px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.wish{
+background:rgba(255,255,255,0.15);
+padding:15px;
+margin:10px;
+border-radius:10px;
+}
+
+.like{
+font-size:25px;
+cursor:pointer;
+}
+
+input{
+padding:10px;
+font-size:18px;
+border-radius:10px;
+border:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div id="loginPage" class="page active">
+
+<h1>🔒 Sahifaga kirish</h1>
+<p>Bu sahifa faqat Oygulim uchun ❤️</p>
+
+<input type="password" id="passwordInput" placeholder="Parol kiriting">
+
+<br><br>
+
+<button onclick="checkPassword()">Kirish</button>
+
+<p id="errorText"></p>
+
+</div>
+
+
+<!-- HOME -->
+
+<div id="home" class="page">
+
+<h1>💐 Bayramlaringiz muborak bo‘lsin Oygulim ❤️</h1>
+
+<h2>Bu kichkina sahifa siz uchun tayyorlandi</h2>
+
+<button onclick="openPage('wish')">💌 Tabrik</button>
+<button onclick="openPage('heart')">❤️ Yurak</button>
+<button onclick="openPage('question')">❓ Savol</button>
+<button onclick="openPage('time')">⏰ Vaqt</button>
+
+<br><br>
+
+<img class="love-img" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2">
+
+</div>
+
+
+<!-- WISH -->
+
+<div id="wish" class="page">
+
+<h1>Oygulim uchun tabriklar 💌</h1>
+
+<div class="wish">1. Sizga har doim baxt tilayman , Xudo xoxlasa birga baxtli bo`lamiz<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">2. Tabassumingiz juda chiroyli , Buni fiaqat men ko`rishni istayman<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">3. Har kuningiz quvonchga to‘lsin , Axir siz bunga arziysiz<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">4. Siz doim kulib yuring , sizga yarashadi😊<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">5. Siz juda ajoyib insonsiz , Chunki siz mening Oygulimsiz<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">6. Siz bilan gaplashish yoqimli , hoh kech bo`lsin hoh kunduz<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">7. Siz atrofga quvonch olib kelasiz , menga esa baxt<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">8. Mening gulimsz 🌹o`zimning yagona gulim<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">9. Siz juda mehribonsiz , o`zimning jajji mehribonim<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">10. Siz bilan tanishganimdan xursandman , hech qachon afsuslanmaganman<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">11. Siz bahordek go‘zalsiz , oyni ham qoldirib ketasz<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">12. Siz har doim shunday chiroyli bo‘ling<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">13. Sizga eng yaxshi tilaklarim , men bilan baxtli boling<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">14. Yuzingizdan tabassum ketmasin hatto men ketsam ham<span onclick="like(this)" class="like">🤍</span></div>
+<div class="wish">15. Siz dunyodagi eng chiroyli qizsiz, ozimning princessam ❤️<span onclick="like(this)" class="like">🤍</span></div>
+
+<button onclick="back()">⬅ Back</button>
+
+</div>
+
+
+<!-- HEART -->
+
+<div id="heart" class="page">
+
+<h1>Siz uchun ❤️</h1>
+
+<div class="big-heart">❤️</div>
+
+<p>Bu yurak siz uchun urmoqda 💗</p>
+
+<button onclick="back()">⬅ Back</button>
+
+</div>
+
+
+<!-- QUESTION -->
+
+<div id="question" class="page">
+
+<h1>Kichkina savollar 😊</h1>
+
+<p id="questionText"></p>
+
+<button onclick="answer(true)">Ha 💗</button>
+<button onclick="answer(false)">Yo'q 😅</button>
+
+<p id="answer"></p>
+
+<button onclick="back()">⬅ Back</button>
+
+</div>
+
+
+<!-- TIME -->
+
+<div id="time" class="page">
+
+<h1>Biz tanishganimizga ⏳</h1>
+
+<h2 id="loveTime"></h2>
+
+<p>Shuncha vaqt o'tibdi ❤️</p>
+
+<button onclick="back()">⬅ Back</button>
+
+</div>
+
+
+<script>
+
+function checkPassword(){
+
+let password="1914"
+let input=document.getElementById("passwordInput").value
+
+if(input===password){
+
+document.getElementById("loginPage").classList.remove("active")
+document.getElementById("home").classList.add("active")
+
+}else{
+
+document.getElementById("errorText").innerHTML="❌ Parol noto‘g‘ri"
+
+}
+
+}
+
+function openPage(id){
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active")
+})
+document.getElementById(id).classList.add("active")
+}
+
+function back(){
+openPage("home")
+}
+
+function like(el){
+el.innerHTML="❤️"
+}
+
+let questions=[
+"Sizga bu sahifa yoqdimi?",
+"Meni eslaganingizda kulasizmi?",
+"Men bilan gaplashish sizga yoqadimi?",
+"Meni yaxshi inson deb o'ylaysizmi?",
+"Menga ishonasizmi?",
+"Men sizni xursand qila olaman deb o'ylaysizmi?",
+"Men bilan ko'proq gaplashishni xohlaysizmi?",
+"Meni sog'inib turasizmi?",
+"Men siz uchun muhimmanmi?",
+"Men bilan baxtli bo'lasizmi?"
+]
+
+let qIndex=0
+
+function showQuestion(){
+document.getElementById("questionText").innerHTML=questions[qIndex]
+}
+
+function answer(res){
+
+if(res){
+document.getElementById("answer").innerHTML="💗 Juda yaxshi!"
+}else{
+document.getElementById("answer").innerHTML="😅 Mayli baribir siz zo'rsiz"
+}
+
+qIndex++
+
+if(qIndex<questions.length){
+setTimeout(()=>{
+showQuestion()
+document.getElementById("answer").innerHTML=""
+},1000)
+}else{
+document.getElementById("questionText").innerHTML="Savollar tugadi 😊"
+}
+
+}
+
+showQuestion()
+
+let startDate=new Date("2023-10-23T12:23:00")
+
+setInterval(()=>{
+
+let now=new Date()
+let diff=now-startDate
+
+let days=Math.floor(diff/(1000*60*60*24))
+let hours=Math.floor((diff/(1000*60*60))%24)
+let minutes=Math.floor((diff/(1000*60))%60)
+let seconds=Math.floor((diff/1000)%60)
+
+document.getElementById("loveTime").innerHTML=
+days+" kun "+
+hours+" soat "+
+minutes+" minut "+
+seconds+" sekund"
+
+},1000)
+
+</script>
+
+</body>
+</html>
+<link rel="stylesheet" href="http://example.com/css/main.css">
